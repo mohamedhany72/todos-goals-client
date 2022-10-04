@@ -182,7 +182,7 @@ const Update = () => {
                                 <img
                                     crossorigin="anonymous"
                                     src={
-                                        picurl
+                                        picurl && !removeChecked
                                             ? picurl
                                             : gender === 2
                                             ? userFemalePic
@@ -209,20 +209,22 @@ const Update = () => {
                                             role="input"
                                             type="button"
                                             onClick={clickChooseImage}
+                                            disabled={removeChecked}
                                         >
                                             choose image
                                         </button>
                                         {picurl !==
-                                            setFullPicUrl(user.picurl) && (
-                                            <button
-                                                className="btn btn-primary"
-                                                role="input"
-                                                type="button"
-                                                onClick={cancelChoosedImage}
-                                            >
-                                                reset image
-                                            </button>
-                                        )}
+                                            setFullPicUrl(user.picurl) &&
+                                            !removeChecked && (
+                                                <button
+                                                    className="btn btn-primary"
+                                                    role="input"
+                                                    type="button"
+                                                    onClick={cancelChoosedImage}
+                                                >
+                                                    reset image
+                                                </button>
+                                            )}
                                     </div>
                                     <div>
                                         <input
