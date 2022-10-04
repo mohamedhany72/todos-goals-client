@@ -1,0 +1,459 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+button:focus{
+    outline: none ;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+input:focus{
+    outline: none;
+}
+
+.form-control{
+    border-radius: 0;
+    border: 1px solid #000;
+}
+.form-control:focus, .form-control:active{
+    outline: none !important;
+    box-shadow: none;
+    border: 2px solid #0d6efd;
+}
+.btn{
+    border-radius: 0;
+    padding: 10px 15px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+
+/* ----------------------------------- navbar ----------------------------------- */
+nav{
+    /* height: 66px; */
+    background: #fff;
+    /* padding: 5px 0px !important; */
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.navbar-brand{
+    width: 30%;
+    height: 100%;
+}
+.navbar-brand img{
+    max-width: 100%;
+    height: 40px;
+    object-fit: contain;
+}
+nav ul{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.nav-profile-pic{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+.dropdown-toggle::after{
+    display: none;
+}
+.navbar-toggler{
+    border-radius: 0;
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+    outline: none;
+}
+.profile-menu{
+    padding: 10px;
+    border: 1px solid #000;
+    background: #fff;
+    border-radius: 0;
+    text-align: center;
+}
+.profile-btn{
+    margin-bottom: 20px;
+}
+.sign-in-btn, .sign-up-btn{
+    padding: 8px;
+
+}
+.nav-item .btn{
+    width: 101px;
+}
+
+
+@media only screen and (min-width: 992px) {
+    nav{
+        height: 80px;
+    }
+    .navbar-brand{
+        width: 20%;
+    }
+    .navbar-brand img{
+        height: 60px;
+    }
+    .nav-profile-pic{
+        width: 60px;
+        height: 60px;
+    }
+    nav .nav-item{
+        line-height: 64px;
+    }
+    .navbar-expand-lg .navbar-nav .dropdown-menu{
+        left: -65%;
+    }
+}
+
+
+
+
+
+
+
+
+/* ----------------------------------- header ----------------------------------- */
+header{
+    background: #f5f6fa;
+    border-bottom: 1px solid #000;
+    padding: 40px 20px;
+    max-height: 300px;
+    text-align: center;
+}
+header img{
+    object-fit: contain;
+    height: 100%;
+    max-height: 200px;
+}
+
+
+
+
+/* ----------------------------------- main ----------------------------------- */
+main{
+    /* margin-bottom: 200px; */
+    padding-bottom: 170px;
+    /* padding-top: 100px; */
+}
+section{
+    padding-top: 80px;
+}
+
+h1, h2, h3{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-size: 2.5em;
+    margin: 0px 0px 50px;
+    border-bottom: 1px solid #000;
+    padding: 20px;
+}
+h2{
+    font-size: 1.5em;
+    border-bottom: none;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+h3{
+    font-size: 1.7em;
+    margin-bottom: 30px;
+    border-bottom: none;
+    text-transform: capitalize;
+}
+
+.search-form, .add-form{
+    /* padding-bottom: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+
+}
+.add-form{
+    border-bottom: 1px solid #000;
+    margin-bottom: 50px;
+}
+
+.add-form form{
+    border: 1px solid #000;
+    padding: 30px 20px;
+}
+.search-form form, .add-form form{
+    width: 100%;
+    max-width: 900px;
+}
+.search-form form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-form-row{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+} 
+
+.search-form .btn, .add-form .btn{
+    width: fit-content;
+}
+
+.form-error{
+    color: #e84118;
+}
+
+
+@media (min-width:768px){
+    .search-form .form-control{
+        margin-right: 20px;
+        padding: 10px 15px;
+    }
+
+}
+
+
+
+/* --------------- list styles --------------- */
+.list-group-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* font-weight: 500; */
+    font-size: 1.2em;
+}
+
+.list{
+    padding: 0px 0px 100px;
+}
+
+.list ul{
+    padding-top: 30px;
+}
+
+
+/* ----------------------------------- footer ----------------------------------- */
+footer{
+    text-transform: capitalize;
+    background: #2d3436;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+footer p{
+    margin-bottom: 0;
+}
+footer a{
+    text-decoration: none;
+    /* color: #0984e3; */
+    color: #81ecec;
+}
+
+footer a:hover, footer a:focus{
+    color: #0d6efd;
+}
+
+
+
+
+/* ----------------------------------- about page ----------------------------------- */
+
+.about{
+    padding: 80px 0px;
+}
+
+.about p{
+    font-size: 1.1em;
+    line-height: 1.2em;
+    text-align: justify;
+    padding: 40px 10px;
+}
+
+
+
+/* ----------------------------------- sign in page ----------------------------------- */
+
+.sign-in-page, .sign-up-page, .profile-page, .error-page{
+    text-align: center;
+    padding: 80px 0px;
+}
+.sign-in-page .form-check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-page .form-check input{
+    margin-right: 10px;
+    margin-bottom: 4px;
+}
+
+
+
+
+/* ----------------------------------- sign up page ----------------------------------- */
+.sign-up-form label{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.profile-img-big{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-img-big img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.profile-header h1{
+    padding: 80px 0px;
+    border-bottom: none;
+    font-weight: 600;
+    font-size: 2.75em;
+}
+
+
+
+.offscreen {
+    position: absolute;
+    left: -99999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: #0984e3;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: #e84118;
+    margin-left: 0.25rem;
+}
+
+.sign-up-error{
+    color: #3742fa;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #f1f2f6;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.sign-up-error:first-letter{
+    text-transform: capitalize;
+}
+.sign-up-error svg{
+    margin-right: 5px;
+}
+
+
+.error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-page img{
+    object-fit: contain;
+    margin-bottom: 50px;
+}
+
+
+
+.loadingDiv {
+    min-height: 100vh;
+    background: #fff;
+    display: grid;
+    place-items: center;
+}
+
+.loader {
+    padding: 2rem 4rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: #0652DD;
+    border-style: solid;
+    border-width: 1vmin;
+    font-size: 2rem;
+    /* --charge: hsl(var(--h, 0), 80%, 50%); */
+    --charge: hsl(38, 80%, 50%);
+    -o-border-image: conic-gradient(var(--charge) var(--a), transparent calc(var(--a) + 0.5deg)) 30;
+        border-image: conic-gradient(var(--charge) var(--a), transparent calc(var(--a) + 0.5deg)) 30;
+    -webkit-animation: load 2s infinite ease-in-out;
+            animation: load 2s infinite ease-in-out;
+}
+
+
+.spinner {
+    animation: spin infinite 5s linear;
+    color: #0652DD;
+    /*You can increase or decrease the timer (5s) to 
+     increase or decrease the speed of the spinner*/
+  }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.success{
+    color: #0984e3;
+    font-weight: 700;
+    font-size: 1.3rem;
+    /* background: ; */
+}
+
+
+#progress{
+    width: 90%;
+    height: 25px;
+    vertical-align: middle;
+    accent-color: #0984e3;
+}
+
