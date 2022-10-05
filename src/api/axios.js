@@ -1,10 +1,12 @@
 import axios from "axios";
 import { getAccess } from "./usersApi";
 
-axios.defaults.baseURL = "http://localhost:3001/api";
+const { REACT_APP_SERVER_URL, REACT_APP_CLIENT_URL } = process.env;
+
+axios.defaults.baseURL = `${REACT_APP_SERVER_URL}/api`;
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.common["Access-Control-Allow-Origin"] =
-    "http://localhost:3000";
+    REACT_APP_CLIENT_URL;
 axios.defaults.headers.common["Access-Control-Max-Age"] = 600;
 axios.defaults.headers.common["Access-Control-Allow-Methods"] = [
     "POST",

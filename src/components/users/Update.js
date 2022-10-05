@@ -13,9 +13,10 @@ import userFemalePic from "../../assets/images/user_female.png";
 import * as UAPI from "../../api/usersApi";
 import { addUser } from "../../redux/user/user";
 
-export const BACK_END_ROOT_URL = "http://localhost:3001";
+// export const BACK_END_ROOT_URL = "http://localhost:3001";
+const { REACT_APP_SERVER_URL } = process.env;
 export const setFullPicUrl = (url) => {
-    return `${BACK_END_ROOT_URL}/api/images/${url}`;
+    return `${REACT_APP_SERVER_URL}/api/images/${url}`;
 };
 
 // import axios from "axios";
