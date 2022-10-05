@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header";
 import Update from "./Update";
 import ChangePswd from "./ChangePswd";
+import Delete from "./Delete";
 
 const Profile = () => {
     return (
@@ -16,6 +17,8 @@ const Profile = () => {
                             <Update />
 
                             <ChangePswd />
+
+                            <Delete />
                         </div>
                     </div>
                 </div>

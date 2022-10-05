@@ -1,4 +1,9 @@
 import axios from "axios";
+import {
+    setRefreshCookie,
+    setBrowserCookie,
+    clearCookies
+} from "../utils/setCookies";
 
 const USERS_URL = "/users";
 
@@ -59,6 +64,8 @@ const register = async (name, email, gender, pswd, cpswd) => {
         return handleErr(res);
     }
 
+    setBrowserCookie(res?.data?.browser);
+    setRefreshCookie(res?.data?.refresh);
     setAuthHeader(res);
 
     return {
@@ -77,6 +84,8 @@ const login = async (email, pswd) => {
         return handleErr(res);
     }
 
+    setBrowserCookie(res?.data?.browser);
+    setRefreshCookie(res?.data?.refresh);
     setAuthHeader(res);
 
     return {
@@ -110,7 +119,10 @@ const refresh = async () => {
     if (res.message) {
         return handleErr(res);
     }
+
+    setRefreshCookie(res?.data?.refresh);
     setAuthHeader(res);
+
     return {
         success,
         user: res?.data?.user
@@ -192,6 +204,7 @@ const update = async (formData, cb) => {
         return handleErr(res);
     }
 
+    setRefreshCookie(res?.data?.refresh);
     setAuthHeader(res);
 
     return {
@@ -284,6 +297,7 @@ const logout = async () => {
     }
 
     unsetAuthHeader();
+    clearCookies();
 
     return {
         success,
@@ -305,6 +319,7 @@ const logoutAll = async () => {
     }
 
     unsetAuthHeader();
+    clearCookies();
 
     return {
         success,
@@ -313,7 +328,7 @@ const logoutAll = async () => {
 };
 
 const deleteUser = async (confirmMsg, pswd, _csrf) => {
-    const res = await axios.delete(
+    const res = await axios.post(
         DELETE_URL,
         JSON.stringify({ confirmMsg, pswd, _csrf }),
         {
@@ -327,6 +342,7 @@ const deleteUser = async (confirmMsg, pswd, _csrf) => {
     }
 
     unsetAuthHeader();
+    clearCookies();
 
     return {
         success,

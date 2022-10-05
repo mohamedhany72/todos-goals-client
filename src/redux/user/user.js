@@ -12,7 +12,7 @@ const initialState = {
         email: "",
         gender: null,
         picurl: null,
-        isVerified: null
+        verified: null
     },
     fetchLoading: idle,
     updateLoading: idle,
@@ -28,6 +28,9 @@ export const userSlice = createSlice({
         },
         addUser: (state, action) => {
             state.user = action.payload;
+        },
+        verifyUser: (state) => {
+            state.user.verified = true;
         },
         removeUser: (state) => {
             // eslint-disable-next-line
@@ -66,5 +69,5 @@ export const userSlice = createSlice({
     }
 });
 
-export const { logInUser, addUser, removeUser } = userSlice.actions;
+export const { logInUser, addUser, verifyUser, removeUser } = userSlice.actions;
 export default userSlice.reducer;
