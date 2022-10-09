@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-const { REACT_APP_SERVER_URL, REACT_APP_CLIENT_URL } = process.env;
+const { REACT_APP_SERVER_URL } = process.env;
 
 const setRefreshCookie = (refresh) => {
     Cookies.set("refresh", refresh, {
@@ -14,15 +14,13 @@ const setRefreshCookie = (refresh) => {
         expires: 7,
         path: "/",
         sameSite: "None",
-        secure: true,
-        // domain: [REACT_APP_SERVER_URL, REACT_APP_CLIENT_URL]
+        secure: true
     });
 
     Cookies.set("isLoggedIn", true, {
         path: "/",
         sameSite: "None",
-        secure: true,
-        // domain: REACT_APP_SERVER_URL
+        secure: true
     });
 };
 
@@ -33,8 +31,6 @@ const setBrowserCookie = (browser) => {
         sameSite: "None",
         secure: true,
         domain: REACT_APP_SERVER_URL
-        // secure: true,
-        // domain: ""
     });
 };
 
