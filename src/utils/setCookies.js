@@ -15,14 +15,14 @@ const setRefreshCookie = (refresh) => {
         path: "/",
         sameSite: "None",
         secure: true,
-        domain: REACT_APP_SERVER_URL
+        // domain: [REACT_APP_SERVER_URL, REACT_APP_CLIENT_URL]
     });
 
     Cookies.set("isLoggedIn", true, {
         path: "/",
         sameSite: "None",
         secure: true,
-        domain: REACT_APP_SERVER_URL
+        // domain: REACT_APP_SERVER_URL
     });
 };
 
