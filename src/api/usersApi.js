@@ -1,7 +1,7 @@
 import axios from "axios";
 import {
-    setRefreshCookie,
-    setBrowserCookie,
+    setCookies,
+    // setBrowserCookie,
     clearCookies
 } from "../utils/setCookies";
 
@@ -64,8 +64,8 @@ const register = async (name, email, gender, pswd, cpswd) => {
         return handleErr(res);
     }
 
-    setBrowserCookie(res?.data?.browser);
-    setRefreshCookie(res?.data?.refresh);
+    // setBrowserCookie(res?.data?.browser);
+    setCookies();
     setAuthHeader(res);
 
     return {
@@ -84,8 +84,8 @@ const login = async (email, pswd) => {
         return handleErr(res);
     }
 
-    setBrowserCookie(res?.data?.browser);
-    setRefreshCookie(res?.data?.refresh);
+    // setBrowserCookie(res?.data?.browser);
+    setCookies();
     setAuthHeader(res);
 
     return {
@@ -120,7 +120,7 @@ const refresh = async () => {
         return handleErr(res);
     }
 
-    setRefreshCookie(res?.data?.refresh);
+    setCookies();
     setAuthHeader(res);
 
     return {
@@ -204,7 +204,7 @@ const update = async (formData, cb) => {
         return handleErr(res);
     }
 
-    setRefreshCookie(res?.data?.refresh);
+    setCookies();
     setAuthHeader(res);
 
     return {
