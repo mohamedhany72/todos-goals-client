@@ -67,10 +67,8 @@
   <li>add .env file</li>
 </ul>
 <ul>
-  <li>add these env variables:</li>
+  <li>add these env variables: [REACT_APP_CLIENT_UR, REACT_APP_SERVER_URL] </li>
 </ul>
-    - REACT_APP_CLIENT_UR
-    - REACT_APP_SERVER_URL
 <ul>
   <li>
     follow instructions to install server from :
